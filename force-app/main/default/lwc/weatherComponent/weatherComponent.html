@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-size_1-of-3">
+        <lightning-card title="Fill in a city" icon-name="action:upload">
+            <c-search
+            class="slds-show slds-is-relative"
+            oncity={handleSearch}
+            is-searching={isSearching}>
+            </c-search>
+        </lightning-card>
+    </div>
+    <div></br></div>
+    <lightning-card title="Results" icon-name="action:download">
+        <c-weather-info
+        class="slds-show slds-is-relative"
+        city={city}
+        errors={errors}
+        results={records}
+        is-loading={isLoading}>
+        </c-weather-info>
+</lightning-card>
+</template>

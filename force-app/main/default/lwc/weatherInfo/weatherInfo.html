@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <template if:true={isLoading}>
+            <lightning-spinner variant="brand" size="large"> </lightning-spinner>
+        </template>
+        <template if:true={results}>
+            <lightning-datatable
+                key-field="Id"
+                data={results}
+                columns={columns}
+                onrowaction={handleRowAction}
+                hide-checkbox-column="true"
+            >
+           </lightning-datatable>
+        </template>
+        <template if:true={errors}>
+            <p class="title slds-align_absolute-center">{errors}</p>
+        </template>
+    </lightning-card>
+</template>
